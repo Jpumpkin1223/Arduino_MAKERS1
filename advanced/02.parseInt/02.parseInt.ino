@@ -1,6 +1,7 @@
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  pinMode(3, OUTPUT);
 }
 
 void loop() {
@@ -8,6 +9,6 @@ void loop() {
   if (Serial.available()) {
     long value = Serial.parseInt();
     Serial.println(value);
-  
+    analogWrite(3, value);
   }
 }
